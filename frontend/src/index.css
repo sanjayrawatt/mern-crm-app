@@ -1,0 +1,378 @@
+@import 'react-confirm-alert/src/react-confirm-alert.css';
+
+/* General Body and Root Styling */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5; /* Light gray background */
+  color: #333;
+  line-height: 1.6;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/*--- Global Headings and Paragraphs ---*/
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+/*--- Navigation Bar Styles ---*/
+nav {
+  background-color: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+nav span {
+  font-weight: bold;
+  color: #555;
+  margin-right: 25px;
+  font-size: 1.1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #007bff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-right: 15px;
+}
+
+nav a:hover {
+  background-color: #e9f5ff;
+  color: #0056b3;
+}
+
+/* Adjusted float for logout button inside flex container */
+nav button.btn {
+  margin-left: auto; /* Pushes logout button to the right */
+}
+
+/*--- Table Styles ---*/
+.table-styled {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden; /* Ensures rounded corners apply to content */
+}
+
+.table-styled th,
+.table-styled td {
+  border: 1px solid #e0e0e0;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.table-styled thead tr {
+  background-color: #007bff; /* A nice blue for headers */
+  color: white;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.table-styled tbody tr:nth-of-type(even) {
+  background-color: #f8f8f8; /* Light stripe for readability */
+}
+
+.table-styled tbody tr:hover {
+  background-color: #e9ecef; /* Subtle hover effect */
+}
+
+/*--- Button Styles ---*/
+/* Base button style */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  margin-right: 8px; /* Space between buttons */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.btn:hover {
+  transform: translateY(-1px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Primary button (e.g., Add, Save) */
+.btn-primary {
+  background-color: #007bff; /* Blue */
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+/* Success button (e.g., Add New Customer/Lead/Opportunity button) */
+.btn-success {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #218838; /* Darker green */
+}
+
+/* Danger button (Delete) */
+.btn-danger {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Darker red */
+}
+
+/* Secondary button (Cancel, or general action) */
+.btn-secondary {
+  background-color: #6c757d; /* Gray */
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268; /* Darker gray */
+}
+
+/*--- Form Styles ---*/
+.form-container {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: calc(100% - 24px); /* Account for padding */
+  padding: 10px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1em;
+  box-sizing: border-box; /* Include padding in width */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/*--- Message Styles (Error/Success) ---*/
+.error-message {
+  color: #dc3545; /* Red */
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.success-message {
+  color: #28a745; /* Green */
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+/*--- Specific Component Adjustments ---*/
+/* Login Page Specific Styling */
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #007bff;
+  margin-bottom: 25px;
+}
+
+/* Dashboard/Welcome Message */
+.welcome-container {
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.welcome-container h1 {
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav span, nav a, nav button {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  nav button.btn {
+    margin-left: 0; /* Reset margin for full width */
+  }
+  .form-group input, .form-group select, .form-group textarea {
+    width: calc(100% - 20px); /* Adjust for smaller screens */
+  }
+}
+
+/* --- Dashboard Styles --- */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.stat-card h3 {
+  margin: 0 0 10px 0;
+  color: #6c757d; /* Gray color for the title */
+  font-size: 1.1em;
+  text-transform: uppercase;
+}
+
+.stat-card .stat-number {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #007bff; /* Blue for the number */
+}
+
+.recent-activity-card {
+  grid-column: 1 / -1; /* Make this card span the full width */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.recent-activity-card h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.recent-activity-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-activity-card li {
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f2f5;
+  font-size: 1em;
+}
+
+.recent-activity-card li:last-child {
+  border-bottom: none;
+}
+
+
+/* --- Chart Styles --- */
+.chart-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+}
+
+/* --- Confirmation Dialog Styles --- */
+/* This is the container that react-hot-toast creates */
+.confirmation-toast-container {
+  /* This makes our toast take up the full screen height and width */
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  /* Use flexbox to center the dialog within the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4); /* Dim the background */
+  z-index: 9999; /* Ensure it's on top of everything */
+}
+
+/* This is the actual toast message box */
+.confirmation-toast {
+  background: #ffffff;
+  color: #333;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  border-radius: 8px;
+  min-width: 350px;
+  padding: 20px;
+  text-align: center; /* Center the text inside the box */
+}
+
+.confirmation-toast-buttons {
+    margin-top: 15px; /* Add some space above the buttons */
+}
+
+

@@ -1,0 +1,85 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-content p {
+  margin: 0 0 20px 0;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* A generic class for expandable rows */
+.details-row td {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Activity Feed specific styles */
+.activity-feed h4 {
+  margin-top: 0;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.activity-feed ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.activity-feed li {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.activity-feed li:last-child {
+  border-bottom: none;
+}
+
+.activity-actor {
+  font-weight: 600;
+  color: #0056b3;
+  min-width: 120px;
+}
+
+.activity-description {
+  flex-grow: 1;
+  color: #343a40;
+  margin: 0 15px;
+}
+
+.activity-time {
+  font-size: 0.85em;
+  color: #6c757d;
+  min-width: 100px;
+  text-align: right;
+}
