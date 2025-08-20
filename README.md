@@ -4,6 +4,7 @@ A full-stack Customer Relationship Management (CRM) application designed to mana
 
 ## Live Demo
 *(Live link will be added in some time, for now you can check out these screenshots)*
+<img width="1467" height="712" alt="Image" src="https://github.com/user-attachments/assets/62854848-c0f6-4bff-a8e6-0276281ad774" />
 
 
 ## Features
